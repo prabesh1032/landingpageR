@@ -4,7 +4,7 @@ import heroImage from '../assets/hero-image.png'
 
 const Hero = () => {
   return (
-    <section className="container mx-auto flex flex-col md:flex-row justify-between items-center pt-44 pb-6 px-4 sm:px-6 lg:px-8">
+    <section id='home' className="container mx-auto flex flex-col md:flex-row justify-between items-center pt-44 pb-6 px-4 sm:px-6 lg:px-8">
       {/* left column */}
       <div className="w-full md:w-1/2 ml-16">
         {/* Tagline */}
@@ -14,7 +14,7 @@ const Hero = () => {
           </span>
           <span className="text-sm font-bold text-gray-800">Jump start your growth</span>
         </div>
-
+ 
         {/* Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mt-6">
           We boost the growth for <br />

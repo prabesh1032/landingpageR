@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import PricingSection from './components/PricingSection'
 import ProposeSection from './components/ProposeSection'
 import ScheduleSection from './components/SeheduleSection'
+import ServicesSection from './components/ServicesSection'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <ScheduleSection />
       <MonitorSection />
       <PricingSection />
+      <ServicesSection />
     </main>
   )
 }

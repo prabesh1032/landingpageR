@@ -5,7 +5,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 const MonitorSection = () => {
     return (
         <section className='max-w-7xl mx-auto ml-24 px-4 sm:px-6 md:py-24 py-16' >
-            <div className='flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24'>
+            <div className='flex flex-col md:flex-row items-center p-12 justify-between gap-12 md:gap-24'>
                 {/* left */}
                 <div className='md:w-1/2 w-full'>
                     <p className='text-green-500 font-semibold'> MONITOR</p>

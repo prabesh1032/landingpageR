@@ -10,7 +10,7 @@ const PricingSection = () => {
         <section className='py-20  ml-40 px-4'>
             <div className='max-w-6xl mx-auto'>
                 <h2 className='text-3xl md:text-4xl font-bold text-center mb-16'>Pricing</h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-12'>
+                <div className='grid grid-cols-1 p-12 md:grid-cols-2 gap-8 mb-12'>
                     {/* starter plan */}
                     <div className='bg-white shadow-lg rounded-lg p-8 mb-8 md:mb-0'>
                         <h3 className='text-xl text-gray-600 mb-4'>Starter</h3>

@@ -8,12 +8,12 @@ const Navbar = () => {
   const navlinks = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'AboutUs' },
-    { href: '#services', label: 'OurServices' },
+    { href: '#gg', label: 'OurServices' },
     { href: '#testimonials', label: 'Testimonials' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gray-50 backdrop-blur-md shadow-md z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-gray-50  backdrop-blur-md shadow-md z-50">
       <div className="container w-full mx-auto flex justify-between items-center px-6 md:px-20 md:h-20 h-16">
         {/* Logo */}
         <div className="flex items-center gap-1 cursor-pointer ml-4 md:ml-6 lg:ml-10">

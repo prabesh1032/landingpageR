@@ -20,7 +20,8 @@ const FeaturesSection = () => {
     ]
 
     return (
-        <section className='mx-w-7xl ml-24 mx-auto px-4 sm:px-6 md:px-8 py-16' id='about'>
+        <section id ='features'
+     className='mx-w-7xl ml-24 mx-auto px-4 sm:px-6 md:px-8 py-16' id='about'>
 
             {/* heading texts */}
             <div className='text-center mb-16'>

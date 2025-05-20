@@ -1,5 +1,7 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
+import { FiZap } from 'react-icons/fi'
+
 
 const Footer = () => {
   const footerLinks = {
@@ -27,15 +29,14 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gray-50 mt-24 py-12 px-12">
+    <footer className="bg-gray-50 mt-24 py-16 px-16">
       <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 ml-24 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-1 mb-6">
-              <div className="w-4 h-4 bg-red-600 rounded-full opacity-75"></div>
-              <div className="w-4 h-4 bg-blue-500 rounded-full -ml-2"></div>
-              <span className="text-xl font-medium ml-1">The Next Design</span>
+              <FiZap className="text-blue-600 w-6 h-6 animate-pulse" />
+              <span className="text-xl font-bold text-gray-800 tracking-tight">Boostly</span>
             </div>
             <p className="text-gray-600 mb-6">
               The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times.
@@ -81,7 +82,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-200 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className=" ml-24 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600 text-sm">
               Copyright © {new Date().getFullYear()} P10
             </p>

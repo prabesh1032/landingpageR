@@ -34,10 +34,10 @@ const services = [
 
 const ServicesSection = () => {
     return (
-        <section className='container mx-auto px-6 lg:px-16 py-12 ml-24'>
+        <section className='container mx-auto px-6 lg:px-16 py-12 ml-24' >
             <div className='flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-24'>
                 {/* header */}
-                <div className='md:w-1/3 w-full mb-10'>
+                <div id='services' className='md:w-1/3 w-full mb-10'>
                     <h2 className='text-3xl md:text-4xl font-bold mb-6 md:w-4/5'>
                         Future of Support with new shape
                     </h2>

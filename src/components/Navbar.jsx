@@ -1,5 +1,8 @@
 import React from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { motion } from "framer-motion"
+import { fadeIn } from '../ultils/motion';
+import { FiZap } from 'react-icons/fi'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -8,17 +11,22 @@ const Navbar = () => {
   const navlinks = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'AboutUs' },
-    { href: '#gg', label: 'OurServices' },
+    { href: '#services', label: 'OurServices' },
     { href: '#testimonials', label: 'Testimonials' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gray-50  backdrop-blur-md shadow-md z-50">
+    <motion.nav
+      variants={fadeIn('down', 0.2)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="fixed top-0 left-0 right-0 bg-gray-50  backdrop-blur-md shadow-md z-50">
       <div className="container w-full mx-auto flex justify-between items-center px-6 md:px-20 md:h-20 h-16">
         {/* Logo */}
-        <div className="flex items-center gap-1 cursor-pointer ml-4 md:ml-6 lg:ml-10">
-          <div className="w-4 h-4 bg-red-500 rounded-full opacity-75 hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="w-4 h-4 -ml-2.5 bg-blue-500 rounded-full opacity-75 hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="flex items-center gap-2 cursor-pointer ml-4 md:ml-6 lg:ml-10">
+          <FiZap className="text-blue-600 w-8 h-8 animate-pulse" />
+          <span className="text-3xl font-extrabold text-gray-800 tracking-tight hover:text-blue-600">Boostly</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -28,11 +36,10 @@ const Navbar = () => {
               key={index}
               href={link.href}
               onClick={() => setActiveLink(link.href)}
-              className={`text-lg font-extrabold relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300 ${
-                activeLink === link.href
+              className={`text-lg font-extrabold relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300 ${activeLink === link.href
                   ? 'text-blue-500 after:w-full'
                   : 'text-gray-700 hover:text-gray-900'
-              }`}
+                }`}
             >
               {link.label}
             </a>
@@ -65,9 +72,8 @@ const Navbar = () => {
                   setActiveLink(link.href);
                   setIsMenuOpen(false);
                 }}
-                className={`block text-lg font-semibold ${
-                  activeLink === link.href? 'text-blue-600': 'text-gray-700 hover:text-gray-900'
-                }`}
+                className={`block text-lg font-semibold ${activeLink === link.href ? 'text-blue-600' : 'text-gray-700 hover:text-gray-900'
+                  }`}
               >
                 {link.label}
               </a>
@@ -81,7 +87,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

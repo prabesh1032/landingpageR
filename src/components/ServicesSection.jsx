@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion as Motion } from 'framer-motion'
+import { staggerContainer, fadeIn } from '../ultils/motion'
 import { FaDotCircle } from 'react-icons/fa'
 import { BsStack } from 'react-icons/bs'
 import { HiLightBulb } from 'react-icons/hi'
@@ -34,7 +36,7 @@ const services = [
 
 const ServicesSection = () => {
     return (
-        <section className='container mx-auto px-6 lg:px-16 py-12 ml-24' >
+    <Motion.section variants={staggerContainer(0.12,0.06)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className='container mx-auto px-6 lg:px-16 py-12' >
             <div className='flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-24'>
                 {/* header */}
                 <div id='services' className='md:w-1/3 w-full mb-10'>
@@ -62,13 +64,10 @@ const ServicesSection = () => {
                 </div>
 
                 {/* service cards */}
-                <div className='grid grid-cols-1 p-24 md:grid-cols-2 gap-8 w-full md:w-2/3'>
+                <div className='grid grid-cols-1 p-8 md:grid-cols-2 gap-8 w-full md:w-2/3'>
                     {
-                        services.map((service, index) => (
-                            <div
-                                key={index}
-                                className='max-w-72 p-6 bg-white rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105'
-                            >
+                            services.map((service, index) => (
+                                <Motion.div key={index} variants={fadeIn('up',0.12+index*0.06)} className='max-w-72 p-6 bg-white rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105'>
                                 <div className='mb-4'>
                                     {service.icon}
                                     <h3 className='text-xl mb-2 font-semibold'>{service.title}</h3>
@@ -77,12 +76,12 @@ const ServicesSection = () => {
                                 <a href={service.link} className='text-indigo-600 font-medium hover:text-indigo-700 transition-colors'>
                                     Learn More
                                 </a>
-                            </div>
+                            </Motion.div>
                         ))
                     }
                 </div>
             </div>
-        </section>
+        </Motion.section>
     )
 }
 

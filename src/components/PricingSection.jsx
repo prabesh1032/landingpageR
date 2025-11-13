@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion as Motion } from 'framer-motion'
+import { staggerContainer, fadeIn } from '../ultils/motion'
 
 const PricingSection = () => {
     const [productCount, setProductCount] = React.useState(0);
@@ -7,20 +9,20 @@ const PricingSection = () => {
 
 
     return (
-        <section className='py-20  ml-40 px-4'>
-            <div className='max-w-6xl mx-auto'>
+        <Motion.section variants={staggerContainer(0.12, 0.06)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className='py-20 px-4'>
+            <div className='max-w-6xl mx-auto container'>
                 <h2 className='text-3xl md:text-4xl font-bold text-center mb-16'>Pricing</h2>
                 <div className='grid grid-cols-1 p-12 md:grid-cols-2 gap-8 mb-12'>
                     {/* starter plan */}
-                    <div className='bg-white shadow-lg rounded-lg p-8 mb-8 md:mb-0'>
+                    <Motion.div variants={fadeIn('up', 0.12)} className='bg-white shadow-lg rounded-lg p-8 mb-8 md:mb-0'>
                         <h3 className='text-xl text-gray-600 mb-4'>Starter</h3>
                         <p className='text-3xl font-bold'>${starterPrice}</p>
-                    </div>
+                    </Motion.div>
                     {/* business plan */}
-                    <div className='bg-white shadow-lg rounded-lg p-8 mb-8 md:mb-0'>
+                    <Motion.div variants={fadeIn('up', 0.18)} className='bg-white shadow-lg rounded-lg p-8 mb-8 md:mb-0'>
                         <h3 className='text-xl text-gray-600 mb-4'>Business</h3>
                         <p className='text-3xl font-bold'>${businessPrice}</p>
-                    </div>
+                    </Motion.div>
                 </div>
                 <div className='max-w-md mx-auto'>
                     <p className='text-center font-semibold text-gray-600mb-4'>{productCount} products</p>
@@ -40,7 +42,7 @@ const PricingSection = () => {
                     </div>
                 </div>
             </div>
-        </section>
+    </Motion.section>
 
     )
 }

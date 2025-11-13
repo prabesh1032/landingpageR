@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion as Motion } from 'framer-motion'
+import { staggerContainer, fadeIn } from '../ultils/motion'
 
 const FeaturesSection = () => {
     const features = [
@@ -20,8 +22,14 @@ const FeaturesSection = () => {
     ]
 
     return (
-        <section id ='features'
-     className='mx-w-7xl ml-24 mx-auto px-4 sm:px-6 md:px-8 py-16' id='about'>
+    <Motion.section
+            id='features'
+            variants={staggerContainer(0.12, 0.08)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className='container mx-auto px-4 sm:px-6 md:px-8 py-16'
+        >
 
             {/* heading texts */}
             <div className='text-center mb-16'>
@@ -33,13 +41,13 @@ const FeaturesSection = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6 mb-8'>
                 {
                     features.map((feature, index) => (
-                        <div className='flex flex-col items-center p-6 text-center' key={index}>
+                            <Motion.div variants={fadeIn('up', 0.12)} className='flex flex-col items-center p-6 text-center' key={index}>
                             <div className='w-24 h-24 rounded-full mb-6 flex items-center justify-center bg-gray-100 shadow-md mx-auto'>
                                 <div className='text-3xl'>{feature.icon}</div>
                             </div>
                             <h3 className='text-2xl font-semibold mb-3'>{feature.title}</h3>
                             <p className='text-gray-500 text-centre'>{feature.description}</p>
-                        </div>
+                        </Motion.div>
                     ))
                 }
             </div>
@@ -50,7 +58,7 @@ const FeaturesSection = () => {
                 </button>
             </div>
 
-        </section>
+    </Motion.section>
     )
 }
 

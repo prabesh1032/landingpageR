@@ -3,15 +3,23 @@ import amazon from '../assets/amazon.png'
 import woocommerce from '../assets/woocommerce.png'
 import meundies from '../assets/meundies.png'
 import sitepoint from '../assets/sitepoint.png'
+import { motion as Motion } from 'framer-motion'
+import { staggerContainer, fadeIn } from '../ultils/motion'
 
 const CompanyLogo = () => {
   const logos = [slack, amazon, woocommerce, meundies, sitepoint];
 
   return (
-    <div className="container overflow-hidden px-4 md:px-0 mx-auto py-20 flex flex-col sm:flex-row sm:items-center items-start gap-6 sm:gap-0">
-      <div className="w-full ml-24 sm:w-[300px] shrink-0 px-6 text-gray-600 border-l-4 border-blue-500 bg-white py-4 z-10 text-base sm:text-xl font-semibold mb-6 sm:mb-0">
+  <Motion.section
+      variants={staggerContainer(0.12, 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      className="container overflow-hidden px-4 md:px-0 mx-auto py-20 flex flex-col sm:flex-row sm:items-center items-start gap-6 sm:gap-0"
+    >
+      <Motion.div variants={fadeIn('right', 0.2)} className="w-full sm:w-[300px] shrink-0 px-6 text-gray-600 border-l-4 border-blue-500 bg-white py-4 z-10 text-base sm:text-xl font-semibold mb-6 sm:mb-0">
         Proud partner at <br /> Hubspot & Segment
-      </div>
+      </Motion.div>
       <div className="relative w-full overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {logos.map((logo, index) => (
@@ -32,7 +40,7 @@ const CompanyLogo = () => {
           ))}
         </div>
       </div>
-    </div>
+  </Motion.section>
   );
 };
 

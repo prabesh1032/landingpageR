@@ -1,11 +1,13 @@
 import React from 'react'
 import Monitoriamge from '../assets/monitor-card.webp'
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { motion as Motion } from 'framer-motion'
+import { staggerContainer, fadeIn } from '../ultils/motion'
 
 const MonitorSection = () => {
     return (
-        <section className='max-w-7xl mx-auto ml-24 px-4 sm:px-6 md:py-24 py-16' >
-            <div className='flex flex-col md:flex-row items-center p-12 justify-between gap-12 md:gap-24'>
+        <Motion.section variants={staggerContainer(0.12, 0.08)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className='container mx-auto px-4 sm:px-6 md:py-24 py-16' >
+            <div className='flex flex-col md:flex-row items-center p-8 md:p-12 justify-between gap-12 md:gap-24'>
                 {/* left */}
                 <div className='md:w-1/2 w-full'>
                     <p className='text-green-500 font-semibold'> MONITOR</p>
@@ -24,11 +26,11 @@ const MonitorSection = () => {
                     </a>
                 </div>
                 {/* right */}
-                <div className='md:w-1/2 w-full'>
+                <Motion.div variants={fadeIn('left', 0.12)} className='md:w-1/2 w-full'>
                     <img src={Monitoriamge} alt="ScheduleImage" className='w-full h-auto' />
-                </div>
+                </Motion.div>
             </div>
-        </section>
+        </Motion.section>
     )
 }
 

@@ -1,7 +1,7 @@
 
 //   purpose section
 
-export const features = [
+export const purposeFeatures = [
     {
       icon: "🟣", // Replace with your actual icon component or image
       title: "Built for impact",
@@ -16,7 +16,7 @@ export const features = [
 
 //   features section
 
-  const features = [
+  export const features = [
     {
       icon: "🔍", 
       title: "Find out what you need",
@@ -35,27 +35,27 @@ export const features = [
   ]
 
 //   services section
-const services = [
+export const services = [
     {
-      icon: <BsStack className="w-8 h-8 text-indigo-600" />,
+      icon: 'stack',
       title: "Web Design",
       description: "One for all and all for one, Muskehounds are always ready.",
       link: "#learn-more"
     },
     {
-      icon: <HiLightBulb className="w-8 h-8 text-amber-400" />,
+      icon: 'lightbulb',
       title: "Ad-Creatives", 
       description: "Alphabet Village and the subline of her own road.",
       link: "#learn-more"
     },
     {
-      icon: <FiSettings className="w-8 h-8 text-red-400" />,
+      icon: 'settings',
       title: "Automation",
       description: "Little Blind Text should turn around and return.",
       link: "#learn-more"
     },
     {
-      icon: <BiTime className="w-8 h-8 text-cyan-400" />,
+      icon: 'time',
       title: "Infographics",
       description: "Nothing the copy said could convince her.",
       link: "#learn-more"
@@ -64,7 +64,7 @@ const services = [
 
 //   testimonials section
 
-const testimonials = [
+export const testimonials = [
     {
       id: 1,
       name: "Robin Ayala Doe", 
@@ -105,7 +105,7 @@ const testimonials = [
   ];
 
   // footer section
-  const footerLinks = {
+  export const footerLinks = {
     company: [
       { name: 'About', href: '#' },
       { name: 'Terms of Use', href: '#' },

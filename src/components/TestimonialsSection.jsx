@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion as Motion } from 'framer-motion'
+import { staggerContainer, fadeIn } from '../ultils/motion'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -50,8 +52,7 @@ const testimonials = [
 ];
 const TestimonialsSection = () => {
     return (
-        <section id='testimonials'
-            className=' max-w-7xl mx-auto p-20 ml-16'>
+    <Motion.section id='testimonials' variants={staggerContainer(0.12,0.08)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className=' max-w-7xl mx-auto p-8'>
             <div className='text-center mb-12'>
                 <h2 className='text-3xl font-bold text-gray-800 md:texy-4xl mb-4'>
                     What Our Happy Client Say</h2>
@@ -88,9 +89,9 @@ const TestimonialsSection = () => {
                     modules={[Navigation]}
                     className="testimonials-swiper mb-12"
                 >
-                    {testimonials.map((testimonial) => (
+                    {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={testimonial.id} className='h-full md:py-12 py-6 '>
-                            <div className='text-center bg-white rounded-lg p-4 h-full flex flex-col'>
+                            <Motion.div variants={fadeIn('up',0.12+index*0.06)} className='text-center bg-white rounded-lg p-4 h-full flex flex-col'>
                                 <div className='w-24 h-24 mx-auto mb-4'>
                                     <img src={testimonial.image} alt="" className='w-full h-full object-cover rounded-full' />
                                 </div>
@@ -107,7 +108,7 @@ const TestimonialsSection = () => {
                                 <p className='text-gray-600 mb-2'>
                                     {testimonial.text}
                                 </p>
-                            </div>
+                            </Motion.div>
                         </SwiperSlide>
                     ))}
 
@@ -128,7 +129,7 @@ const TestimonialsSection = () => {
                 </div>
 
             </div>
-        </section>
+    </Motion.section>
     )
 }
 

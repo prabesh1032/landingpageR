@@ -1,6 +1,6 @@
 import React from 'react'
 import { HiStar, HiArrowRight } from 'react-icons/hi'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { fadeIn, slideIn, textVariant } from '../ultils/motion'
 import heroImage from '../assets/hero-image.png'
 
@@ -11,14 +11,14 @@ const Hero = () => {
       className="container mx-auto flex flex-col md:flex-row justify-between items-center pt-44 pb-6 px-4 sm:px-6 lg:px-8"
     >
       {/* left column */}
-      <motion.div
+  <Motion.div
         variants={slideIn('left', 'spring', 0.2, 1.2)}
         initial="hidden"
         animate="show"
         className="w-full md:w-1/2 ml-0 md:ml-16"
       >
         {/* Tagline */}
-        <motion.div
+  <Motion.div
           variants={fadeIn('up', 0.3)}
           initial="hidden"
           animate="show"
@@ -28,10 +28,10 @@ const Hero = () => {
             <HiStar />
           </span>
           <span className="text-sm font-bold text-gray-800">Jump start your growth</span>
-        </motion.div>
+  </Motion.div>
 
         {/* Heading */}
-        <motion.h1
+  <Motion.h1
           variants={textVariant(0.4)}
           initial="hidden"
           animate="show"
@@ -40,10 +40,10 @@ const Hero = () => {
           We boost the growth for <br />
           <span className="text-blue-500">Startup to Fortune 500 Companies</span>
           <span className="animate-pulse"> ⏰</span>
-        </motion.h1>
+  </Motion.h1>
 
         {/* Subheading */}
-        <motion.p
+  <Motion.p
           variants={fadeIn('up', 0.5)}
           initial="hidden"
           animate="show"
@@ -51,10 +51,10 @@ const Hero = () => {
         >
           Get the most accurate leads, sales people training and conversions,
           tools and more — all within the same one billing.
-        </motion.p>
+  </Motion.p>
 
         {/* Email Input & Button */}
-        <motion.div
+  <Motion.div
           variants={fadeIn('up', 0.6)}
           initial="hidden"
           animate="show"
@@ -68,25 +68,25 @@ const Hero = () => {
           <button className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 cursor-pointer transition-all">
             <HiArrowRight />
           </button>
-        </motion.div>
-      </motion.div>
+  </Motion.div>
+  </Motion.div>
 
       {/* right column */}
-      <motion.div
+  <Motion.div
         variants={slideIn('right', 'spring', 0.3, 1.2)}
         initial="hidden"
         animate="show"
         className="w-full md:w-1/2 mt-16 md:mt-0 px-4 pl-0 md:pl-12"
       >
         <div className="relative">
-          <motion.img
+          <Motion.img
             src={heroImage}
             alt="Hero"
             className="rounded-lg relative z-10 hover:scale-[1.02] transition-transform"
             whileHover={{ scale: 1.02 }}
           />
         </div>
-      </motion.div>
+  </Motion.div>
     </section>
   )
 }

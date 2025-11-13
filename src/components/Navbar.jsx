@@ -1,6 +1,6 @@
 import React from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 import { fadeIn } from '../ultils/motion';
 import { FiZap } from 'react-icons/fi'
 
@@ -16,7 +16,7 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.nav
+    <Motion.nav
       variants={fadeIn('down', 0.2)}
       initial="hidden"
       whileInView="show"
@@ -87,7 +87,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </motion.nav>
+  </Motion.nav>
   );
 };
 

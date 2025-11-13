@@ -1,6 +1,8 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 import { FiZap } from 'react-icons/fi'
+import { motion as Motion } from 'framer-motion'
+import { staggerContainer } from '../ultils/motion'
 
 
 const Footer = () => {
@@ -29,9 +31,15 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gray-50 mt-24 py-16 px-16">
-      <div className="section-container">
-        <div className="grid grid-cols-1 ml-24 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+  <Motion.footer
+      variants={staggerContainer(0.12, 0.06)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      className="bg-gray-50 mt-24 py-16"
+    >
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-1 mb-6">
@@ -82,7 +90,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-200 mt-12 pt-8">
-          <div className=" ml-24 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600 text-sm">
               Copyright © {new Date().getFullYear()} P10
             </p>
@@ -92,7 +100,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+  </Motion.footer>
   )
 }
 

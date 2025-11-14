@@ -82,7 +82,7 @@ const Hero = () => {
           <Motion.img
             src={heroImage}
             alt="Hero"
-            className="rounded-lg relative z-10 hover:scale-[1.02] transition-transform"
+            className="rounded-lg relative z-100 hover:scale-[1.02] transition-transform"
             whileHover={{ scale: 1.02 }}
           />
         </div>
